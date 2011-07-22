@@ -1,0 +1,13 @@
+<%= title("Forgot your password?") %>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <p><%= f.label :email %><br />
+  <%= f.email_field :email %></p>
+
+  <spam class="right"><%= render :partial => "/admin/shared/links" %></spam>
+
+  <p class="left"><%= f.submit "Send me reset password instructions", :class => "button signin" %></p>
+<% end %>
+

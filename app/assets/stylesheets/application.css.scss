@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+*/
+@import "reset.css.scss";
+@import "common.css.scss";
+@import "admin.css.scss";
+@import "galleries.css.scss";
+@import "pictures.css.scss";
+
+
+#map {
+
+  width: 950px;
+  margin: 4em auto;
+  overflow: hidden;
+  position: relative;
+
+  h2 { margin: 0px; border-bottom: 1px solid darken($color-header, 25%); }
+
+  #gallery {
+    margin: 15px 0px;
+  }
+
+  .picture {
+    border: 0px;
+    margin-right: 5px;
+
+    img {
+      border: 4px solid darken($color-header, 25%);
+      width: 150px;
+    }
+  }
+
+  #column1 {
+    width: 200px;
+    float: left;
+    margin-bottom: 50px;
+  }
+
+  #column2 {
+    width: 700px;
+    margin: 0 0 50px;
+    padding: 10px;
+    border-left: 1px solid darken($color-header, 25%);
+    overflow: hidden;
+  }
+
+}
+

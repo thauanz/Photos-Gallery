@@ -1,0 +1,30 @@
+<% title "Galleries" %>
+
+<% @galleries.each do |gallery| %>
+  <div id="gallery">
+
+    <h2>
+      <%= link_to gallery.name, admin_gallery_path(gallery) %>
+      <span class="small">
+        <%= link_to "edit", edit_admin_gallery_path(gallery) %> |
+        <%= link_to "delete", admin_gallery_path(gallery), confirm: "Are you sure?", method: "delete" %>
+        (Pictures: <%= gallery.pictures.size %>)
+      </span>
+    </h2><br/>
+    <div id="picture">
+      <% for picture in gallery.pictures %>
+        <span class="mini-mini-pictures">
+          <%= link_image(picture) %>
+        </span>
+      <% end %>
+    </div>
+
+
+  </div>
+<% end %>
+
+<hr class="thick" />
+<p>
+  <%= link_to "New gallery", new_admin_gallery_path %>
+</p>
+

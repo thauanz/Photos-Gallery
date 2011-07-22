@@ -1,0 +1,12 @@
+<%= error_messages_for(@gallery) %>
+
+<%= form_for [:admin, @gallery] do |form| %>
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<%= form.submit "Save" %> |
+<%= link_to "Cancel", admin_galleries_path %>
+<% end %>
+

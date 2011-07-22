@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= main_title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header"><div class="size-content">
+    <div id="title"><%= main_title %></div>
+    <div id="main-nav">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <% if !user_signed_in? %>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "Galleries", admin_galleries_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div></div>
+  </div>
+
+  <div id="flash_messages">
+    <%= flash_messages %>
+  </div>
+
+  <div id=<%= !user_signed_in? ? "admin" : "wrapper" %>>
+    <div id="title"><h2><%= yield(:title) %></h2></div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div id="footer">
+  </div>
+
+</body>
+</html>
+

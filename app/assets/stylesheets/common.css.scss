@@ -1,0 +1,81 @@
+
+@mixin padding-alert($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+}
+
+/* common reusable elements */
+.middle       { vertical-align:middle; }
+.odd          { background-color:#F1F5FA; }
+.even         { background-color:#FFF; }
+.left         { float: left; }
+.right        { float: right; }
+.clear        { clear: both; }
+.txt-center   { text-align: center !important; }
+.txt-right    { text-align: right !important; }
+.txt-left     { text-align: left !important; }
+.highlight    { background-color: #FFFFCC; }
+.bold         { font-weight: bold; }
+.small        { font-size: 10px; }
+.large        { font-size: large; }
+.hint         { font-style: italic; font-size: 10px; color: #8A8A8A; }
+.frame        { border: 1px solid #e2e2e2; padding: 5px; }
+.green        { color: green; }
+.red          { color: red; }
+.loading      { display: none; }
+
+hr.thick {
+    border: 1px solid #CCC;
+    margin: 20px 0 20px 0;
+}
+
+/* flash messages */
+.flash_message{
+  position: relative;
+
+  .close{
+    font-weight:bold;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    cursor: pointer;
+  }
+}
+
+.demo {
+  color: #000;
+  background: #FFF url(image_path("info_icon.png")) no-repeat 10px 10px;
+  border: 1px solid #999999;
+}
+
+#notice, #alert, #error, .demo {
+  @include padding-alert(10px, 10px, 10px, 40px);
+}
+
+#notice {
+  color: #264409;
+  background: #e6efc2 url(image_path("notice_icon.png")) no-repeat 10px 10px;
+  border: 1px solid #c6d880;
+}
+
+#alert {
+  color: #514721;
+  background: #fff6bf url(image_path("alert_icon.png")) no-repeat 10px 10px;
+  border: 1px solid #ffd324;
+}
+
+#error {
+  margin: 5px 0;
+  color: #8a1f11;
+  background: #fbe3e4 url(image_path("error_icon.png")) no-repeat 10px 10px;
+  border: 1px solid #fbc2c4;
+}
+
+.field_with_errors {
+  textarea, input[type="text"], input[type="password"], input[type="email"], input[type="file"] select {
+    background-color: #fbe3e4;
+  }
+}
+
+/* html5 placeholder fix for ie */
+.jquery_placeholder { color: #aaa; }
+

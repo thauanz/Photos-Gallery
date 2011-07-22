@@ -1,0 +1,29 @@
+<% title "#{link_to @picture.gallery.name, admin_gallery_path(@picture.gallery_id)} &raquo; #{@picture.title}" %>
+
+<div id="picture" class="picture">
+  <div class="preview">
+    <%= image_tag(@picture.image_url) %>
+  </div>
+
+  <div class="info">
+    <span class="hint">(<%= number_to_human_size @picture.image.size %>)</span><br/>
+    <p>
+      <b>Description</b><br/>
+      <%= @picture.description %>
+    </p>
+    <hr class="thick" />
+    <p>
+      <%= link_to 'edit', edit_admin_gallery_picture_path(@picture.gallery_id, @picture) %> |
+      <%= link_to 'back', admin_gallery_path(@picture.gallery_id) %>
+    </p>
+  </div>
+</div>
+
+<div id="picture">
+<% @pictures.each do |picture| %>
+  <span class="mini-pictures">
+    <%= link_image(picture) %>
+  </span>
+<% end %>
+</div>
+

@@ -1,0 +1,26 @@
+<% title "#{@gallery.name}" %>
+
+<div id="pictures">
+  <%= "<h3><p>There is no pictures yet.</p></h3>".html_safe if @gallery.pictures.count.zero? %>
+
+  <% for picture in @gallery.pictures %>
+    <div class="picture">
+      <%= link_image(picture) if picture.image? %>
+      <div class="name"><%= picture.title %></div>
+      <div class="actions">
+        <%= link_to "edit", edit_admin_gallery_picture_path(picture.gallery_id, picture) %> |
+        <%= link_to "remove", admin_gallery_picture_path(picture.gallery_id, picture), confirm: 'Are you sure?', method: :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<hr class="thick" />
+
+<p>
+  <%= link_to "Add a Picture", new_admin_gallery_picture_path(@gallery) %> |
+  <%= link_to "Remove Gallery", admin_gallery_path(@gallery), confirm: 'Are you sure?', method: :delete %> |
+  <%= link_to "View Galleries", admin_galleries_path %>
+</p>
+

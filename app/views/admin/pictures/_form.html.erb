@@ -1,0 +1,34 @@
+<%= error_messages_for(@picture) %>
+
+<%= form_for([:admin, :gallery, @picture], html: {multipart: true}) do |form| %>
+
+  <%= form.hidden_field :gallery_id, :value => params[:gallery_id]  %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+    <% if @picture.image.size > 0 && !@picture.errors.present? %>
+      upload present file <%= link_to 'picture', @picture.image.url, :target => "_blank" %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remote_image_url, "or image URL" %>
+    <%= form.text_field :remote_image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, :rows => 5 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save" %> | <%= link_to "cancel", admin_gallery_path(@picture.gallery_id || params[:gallery_id]) %>
+  </div>
+<% end %>
+

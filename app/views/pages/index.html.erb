@@ -1,0 +1,16 @@
+<% title "Galleries" %>
+
+<% @galleries.each do |gallery| %>
+  <%= content_for(:column1) do %>
+    <div id="gallery">
+      <h3><%= link_to gallery.name, gallery_path(gallery), remote: true %></h3>
+    </div>
+  <% end %>
+
+  <% gallery.pictures.each do |picture| %>
+    <div class="picture">
+      <%= link_to(image_tag(picture.image_url(:small)), gallery_picture_path(picture.gallery_id, picture), id: "picture_#{picture.id}") %>
+    </div>
+  <% end %>
+<% end %>
+
