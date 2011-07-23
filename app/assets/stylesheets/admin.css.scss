@@ -199,6 +199,26 @@ div#header {
   }
 }
 
+/* footer */
+
+#footer {
+  text-align: left;
+  margin-bottom: 0;
+  background-color: darken($color-header, 60%);
+  min-height: 200px;
+  color: #fff;
+
+  .footer-column {
+    float: left;
+    width: 29%;
+    margin: 20px;
+  }
+
+  #developer {
+    span { margin-left: 20px; }
+  }
+}
+
 /* sidebar*/
 div#body {
   float: left;
@@ -322,23 +342,6 @@ textarea { width: 98%; }
 
 input.title {
   width: 98%;
-}
-
-/* comments */
-
-#comments blockquote {
-  font: italic normal normal 110% 'Times New Roman', serif;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-#comments .meta {
-  font-size:12px;
-  color: #A2A2A2;
-}
-
-#comments .meta .name {
-  color: #6B6B6B;
 }
 
 /* misc */

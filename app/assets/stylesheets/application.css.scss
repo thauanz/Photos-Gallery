@@ -14,8 +14,8 @@
 
 #map {
 
-  width: 950px;
-  margin: 4em auto;
+  min-height: 500px;
+  margin-top: 4em;
   overflow: hidden;
   position: relative;
 
@@ -49,5 +49,11 @@
     overflow: hidden;
   }
 
+}
+
+.map-wrapper {
+  text-align: left;
+  width: 950px;
+  margin: 0 auto;
 }
 

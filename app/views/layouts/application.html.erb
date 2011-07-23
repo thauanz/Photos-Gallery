@@ -27,6 +27,7 @@
   </div>
 
   <div id="map">
+    <div class="map-wrapper">
     <div id="column1">
       <div id="title"><h2><%= yield(:title) %></h2></div>
       <%= yield(:column1) %>
@@ -34,9 +35,28 @@
     <div id="column2">
       <%= yield %>
     </div>
+    </div>
   </div>
 
   <div id="footer">
+    <div class="map-wrapper">
+      <div class="footer-column">
+        <h3>Quem somos?</h3>
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</span>
+      </div>
+      <div class="footer-column">
+        <h3>O que fazemos?</h3>
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</span>
+      </div>
+      <div class="footer-column">
+        <h3>Também quer?</h3>
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</span>
+      </div>
+      <div id="developer">
+        <span>2011 Todos direitos reservados. Desenvolvido por <%= link_to "Thauan Zatta", "http://twitter.com/thauanz" %> </span>
+      </div>
+    </div>
+
   </div>
 
 </body>
