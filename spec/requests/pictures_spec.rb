@@ -40,6 +40,7 @@ feature "Pictures", %q{
   end
 
   context "view switch picture" do
+
     def select_picture
       click_link "picture_#{@picture.id}"
       current_path.should == show_picture

@@ -75,5 +75,9 @@ module NavigationsHelpers
     "/admin/galleries/1"
   end
 
+  def show_picture_none
+    "/galleries/1/pictures/1"
+  end
+
 end
 

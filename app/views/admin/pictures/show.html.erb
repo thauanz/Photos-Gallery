@@ -2,21 +2,20 @@
 
 <div id="picture" class="picture">
   <div class="preview">
-    <%= image_tag(@picture.image_url) %>
+    <%= image_tag(@picture.image_url) %><br/>
+    <span class="hint">(<%= number_to_human_size @picture.image.size %>)</span>
   </div>
 </div>
 
 <div class="info">
-  <span class="hint">(<%= number_to_human_size @picture.image.size %>)</span><br/>
-  <p>
-    <b>Description</b><br/>
-    <%= @picture.description %>
-  </p>
-  <hr class="thick" />
   <p>
     <%= link_to 'edit', edit_admin_gallery_picture_path(@picture.gallery_id, @picture) %> |
     <%= link_to 'back', admin_gallery_path(@picture.gallery_id) %>
   </p>
+
+  <p><b>Description:</b></p>
+  <p><%= @picture.description %></p>
+  <hr class="thick" />
 </div>
 
 <div id="picture">

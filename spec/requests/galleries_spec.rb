@@ -82,8 +82,18 @@ feature "View gallery user", %q{
   And navigate between images
 } do
 
+  before(:each) do
+    @gallery = Factory(:gallery)
+    @picture = Factory(:picture, :gallery => @gallery)
+  end
+
   it "displaying image galleries in large formats and small" do
     visit homepage
+    click_link @gallery.name
+    page.has_xpath?('.//div[@class = "picture"]', :count => @gallery.pictures.count).should be_true
+
+    click_link "picture_#{@gallery.pictures.first.id}"
+    current_path.should == show_picture_none
   end
 
 end

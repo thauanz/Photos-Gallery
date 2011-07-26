@@ -26,5 +26,15 @@ module ApplicationHelper
   def main_title
     "Photos Gallery"
   end
+
+  def main_menu
+    html = ""
+    Gallery.find_each do |gallery|
+      html << "<div id='gallery'><h3>"
+      html << link_to(gallery.name, gallery_path(gallery), remote: true)
+      html << "</h3></div>"
+    end
+    html.html_safe
+  end
 end
 
