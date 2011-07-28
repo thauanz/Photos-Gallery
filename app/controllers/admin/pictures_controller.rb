@@ -2,7 +2,7 @@ class Admin::PicturesController < Admin::AdminController
 
   def show
     @picture = Picture.find(params[:id])
-    @pictures = current_user.pictures.where("id <> ? AND gallery_id = ?", @picture.id, params[:gallery_id])
+    @pictures = Picture.where(gallery_id: params[:gallery_id]).excludes(id: @picture.id)
   end
 
   def new
@@ -14,7 +14,7 @@ class Admin::PicturesController < Admin::AdminController
   end
 
   def create
-    @picture = current_user.pictures.build(params[:picture])
+    @picture = current_user.galleries.find(params[:gallery_id]).pictures.build(params[:picture])
     flash[:notice] = 'Picture was successfully created.' if @picture.save
     respond_with @picture, location: admin_gallery_url(@picture.gallery_id)
   end

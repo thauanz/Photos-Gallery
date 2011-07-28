@@ -93,7 +93,7 @@ feature "View gallery user", %q{
     page.has_xpath?('.//div[@class = "picture"]', :count => @gallery.pictures.count).should be_true
 
     click_link "picture_#{@gallery.pictures.first.id}"
-    current_path.should == show_picture_none
+    current_path.should == show_picture_none(@gallery.id, @picture.id)
   end
 
 end

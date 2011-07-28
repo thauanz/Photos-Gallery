@@ -29,7 +29,8 @@ module ApplicationHelper
 
   def main_menu
     html = ""
-    Gallery.all do |gallery|
+    @galleries = Gallery.all
+    @galleries.each do |gallery|
       html << "<div id='gallery'><h3>"
       html << link_to(gallery.name, gallery_path(gallery), remote: true)
       html << "</h3></div>"

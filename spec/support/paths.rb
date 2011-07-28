@@ -75,8 +75,8 @@ module NavigationsHelpers
     "/admin/galleries/1"
   end
 
-  def show_picture_none
-    "/galleries/1/pictures/1"
+  def show_picture_none(gallery_id, picture_id)
+    "/galleries/#{gallery_id}/pictures/#{picture_id}"
   end
 
 end
