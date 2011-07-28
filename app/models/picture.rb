@@ -1,12 +1,17 @@
-class Picture < ActiveRecord::Base
-  attr_accessible :title, :gallery_id, :user_id, :description, :image, :remote_image_url
+class Picture
+  include Mongoid::Document
 
-  belongs_to :user
+  field :title, :type => String
+  field :description, :type => String
+  field :image, :type => String
+
   belongs_to :gallery
 
-  validates :user_id, :gallery_id, :title, :image, :presence => true
+  attr_accessible :title, :gallery, :description, :image, :remote_image_url
 
-  validates_uniqueness_of :title, :scope => :gallery_id, :case_sensitive => false
+  validates :gallery, :title, :image, :presence => true
+
+  validates_uniqueness_of :title, :case_sensitive => false
 
   mount_uploader :image, ImageUploader
 end

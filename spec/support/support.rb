@@ -12,5 +12,6 @@ module HelperSupport
     fill_in 'user_password', :with => vPassword
     click_button("Sign in")
   end
+
 end
 

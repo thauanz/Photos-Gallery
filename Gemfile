@@ -1,43 +1,38 @@
 source 'http://rubygems.org'
 
-#gem 'rails', '3.1.0.rc4'
-gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
+#gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
+gem 'rails', '3.1.0.rc5'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem "mongoid"
+gem "bson_ext"
+
 gem 'therubyracer', :require => "v8"
 gem "devise", '1.4.0'
 gem 'rmagick'
 gem 'carrierwave'
-#gem "sprockets", "2.0.0.beta.10"
-gem 'sprockets', '= 2.0.0.beta.11', :git => 'git://github.com/sstephenson/sprockets.git'
 
-# Asset template engines
+#gem 'sprockets', '= 2.0.0.beta.11', :git => 'git://github.com/sstephenson/sprockets.git'
+gem "sprockets", "2.0.0.beta.12"
+
+
+
 gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
+gem 'coffee-rails', "~> 3.1.0.rc"
 gem 'uglifier'
 
+
 gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :development, :test do
   gem "rspec", '2.6.0'
   gem "rspec-rails", '2.6.1'
   gem "shoulda-matchers"
+  gem "mongoid-rspec"
 end
 
 group :test do
-  # Pretty printed test output
   gem 'turn', :require => false
   gem 'capybara'
   gem 'factory_girl_rails'

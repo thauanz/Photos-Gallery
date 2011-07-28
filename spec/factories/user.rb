@@ -1,4 +1,4 @@
-Factory.define :user do |f|
+Factory.define :user, :class => User do |f|
   f.full_name { Factory.next :full_name }
   f.email { Factory.next :email }
   f.password "password"

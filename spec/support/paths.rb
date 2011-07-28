@@ -22,16 +22,16 @@ module NavigationsHelpers
 
   #Pictures
 
-  def new_picture
-    "/admin/galleries/1/pictures/new"
+  def new_picture(id)
+    "/admin/galleries/#{id}/pictures/new"
   end
 
-  def show_picture
-    "/admin/galleries/1/pictures/1"
+  def show_picture(gallery_id, picture_id)
+    "/admin/galleries/#{gallery_id}/pictures/#{picture_id}"
   end
 
-  def edit_picture
-    "/admin/galleries/1/pictures/1/edit"
+  def edit_picture(gallery_id, picture_id)
+    "/admin/galleries/#{gallery_id}/pictures/#{picture_id}/edit"
   end
 
   def create_picture
@@ -55,12 +55,12 @@ module NavigationsHelpers
     "/admin/galleries/new"
   end
 
-  def show_gallery
-    "/admin/galleries/1"
+  def show_gallery(id)
+    "/admin/galleries/#{id}"
   end
 
-  def edit_gallery
-    "/admin/galleries/1/edit"
+  def edit_gallery(id)
+    "/admin/galleries/#{id}/edit"
   end
 
   def create_gallery

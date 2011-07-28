@@ -2,19 +2,27 @@ require 'spec_helper'
 
 describe Gallery do
 
-  before(:each){ Factory.create(:gallery) }
+  before(:each) do
+    @user = Factory.create(:user)
+    @gallery = Factory.create(:gallery, :user => @user)
+  end
+
   #db
-  it { should have_db_column(:name).of_type(:string) }
-  it { should have_db_column(:user_id).of_type(:integer) }
-  it { should have_db_index(:user_id) }
+  context "db fields" do
+    it { should have_fields(:name, :user_id) }
+    it { should have_field(:name).of_type(String) }
+  end
 
   #associations
-  it { should belong_to(:user) }
-  it { should have_many(:pictures)}
+  context "associations" do
+    it { should belong_to(:user) }
+    it { should have_many(:pictures)}
+  end
 
   #validations
-  it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:user_id) }
-
+  context "validations" do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:user) }
+  end
 end
 

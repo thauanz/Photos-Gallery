@@ -3,7 +3,7 @@ $color-header: #8ae08a;
 $color-access: #d9f6d9;
 $color-text: #ffffca;
 
-$path_input_bg: image_path("input_bg.gif");
+$path_input_bg: asset-path("input_bg.gif", image);
 
 @mixin size-wrapper-default { margin: 0 90px; }
 
@@ -58,7 +58,7 @@ body {
   color: black;
   margin: 0;
   padding: 0;
-  background: $main-color url(asset_path("bg.png", image)) repeat scroll 0 0 !important;
+  background: $main-color url(asset-path("bg.png", image)) repeat scroll 0 0 !important;
   text-align:center;
 }
 

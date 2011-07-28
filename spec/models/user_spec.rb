@@ -2,28 +2,28 @@ require 'spec_helper'
 
 describe User do
 
-  before(:each) { Factory.create(:user) }
-  #validate bd
-  it { should have_db_index(:email).unique(true) }
+  before(:each) { @user = Factory(:user) }
 
-  it { should have_db_column(:email).of_type(:string) }
-  it { should have_db_column(:full_name).of_type(:string).with_options(:null => false) }
-  it { should have_db_column(:encrypted_password).of_type(:string) }
+  #validate bd
+  context "bd validate" do
+    it { should have_fields(:email, :full_name) }
+    it { should have_field(:full_name).of_type(String) }
+  end
 
   #validations
-  it { should validate_presence_of(:full_name) }
-  it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:password) }
-  it { should ensure_length_of(:password).is_at_least(6) }
-  it { should validate_uniqueness_of(:email) }
-
-  #validate format
-  it { should allow_value("maria@gmail.com").for(:email) }
-  it { should_not allow_value("maria@gmail").for(:email) }
+  context "validations" do
+    it { should validate_presence_of(:full_name) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:password) }
+    it { should validate_uniqueness_of(:email) }
+    it { should validate_length_of(:password) }
+    it { should validate_format_of(:email).to_allow("maria@gmail.com") }
+  end
 
   #associations
-  it { should have_many(:pictures).dependent(:destroy) }
-  it { should have_many(:galleries) }
+  context "associations" do
+    it { should have_many(:galleries) }
+  end
 
 end
 

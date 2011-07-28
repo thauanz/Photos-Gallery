@@ -38,7 +38,7 @@ feature "Galleries", %q{
 
   it "should access link to edit" do
     click_link("edit")
-    current_path.should == edit_gallery
+    current_path.should == edit_gallery(@gallery.id)
     page.should be_has_field('Name', :with => @gallery.name )
 
     fill_in "Name", :with => "#{@gallery.name} 1"
@@ -62,7 +62,7 @@ feature "Show Gallery", %q{
 
   def gallery_view_show
     click_link @gallery.name
-    current_path.should == show_gallery
+    current_path.should == show_gallery(@gallery.id)
   end
 
   it "should view picture to gallery" do

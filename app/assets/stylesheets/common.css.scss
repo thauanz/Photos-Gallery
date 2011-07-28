@@ -43,7 +43,7 @@ hr.thick {
 
 .demo {
   color: #000;
-  background: #FFF url(image_path("info_icon.png")) no-repeat 10px 10px;
+  background: #FFF url(asset-path("info_icon.png", image)) no-repeat 10px 10px;
   border: 1px solid #999999;
 }
 
@@ -53,20 +53,20 @@ hr.thick {
 
 #notice {
   color: #264409;
-  background: #e6efc2 url(image_path("notice_icon.png")) no-repeat 10px 10px;
+  background: #e6efc2 url(asset-path("notice_icon.png", image)) no-repeat 10px 10px;
   border: 1px solid #c6d880;
 }
 
 #alert {
   color: #514721;
-  background: #fff6bf url(image_path("alert_icon.png")) no-repeat 10px 10px;
+  background: #fff6bf url(asset-path("alert_icon.png", image)) no-repeat 10px 10px;
   border: 1px solid #ffd324;
 }
 
 #error {
   margin: 5px 0;
   color: #8a1f11;
-  background: #fbe3e4 url(image_path("error_icon.png")) no-repeat 10px 10px;
+  background: #fbe3e4 url(asset-path("error_icon.png", image)) no-repeat 10px 10px;
   border: 1px solid #fbc2c4;
 }
 
