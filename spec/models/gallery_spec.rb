@@ -15,8 +15,8 @@ describe Gallery do
 
   #associations
   context "associations" do
-    it { should belong_to(:user) }
-    it { should have_many(:pictures)}
+    it { should be_referenced_in(:user) }
+    it { should embed_many(:pictures)}
   end
 
   #validations

@@ -1,8 +1,6 @@
 <%= error_messages_for(@picture) %>
 
-<%= form_for([:admin, :gallery, @picture], html: {multipart: true}) do |form| %>
-
-  <%= form.hidden_field :gallery_id, :value => params[:gallery_id]  %>
+<%= form_for([:admin, @gallery, @picture], html: {multipart: true}) do |form| %>
 
   <div class="field">
     <%= form.label :title %>
@@ -28,7 +26,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Save" %> | <%= link_to "cancel", admin_gallery_path(@picture.gallery_id || params[:gallery_id]) %>
+    <%= form.submit "Save" %> | <%= link_to "cancel", admin_gallery_path(params[:gallery_id]) %>
   </div>
 <% end %>
 

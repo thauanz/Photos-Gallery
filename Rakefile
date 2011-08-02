@@ -4,4 +4,5 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-VestirBem::Application.load_tasks
+PhotoGallery::Application.load_tasks
+

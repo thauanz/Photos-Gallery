@@ -1,7 +1,8 @@
 class PicturesController < ApplicationController
 
   def show
-    @picture = Picture.where(gallery_id: params[:gallery_id], id: params[:id])
+    @gallery = Gallery.find(params[:gallery_id])
+    @picture = @gallery.pictures.where(id: params[:id])
   end
 end
 

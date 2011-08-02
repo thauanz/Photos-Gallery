@@ -2,4 +2,5 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-VestirBem::Application.initialize!
+PhotoGallery::Application.initialize!
+

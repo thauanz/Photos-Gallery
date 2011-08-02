@@ -1,4 +1,4 @@
-<% title "#{link_to @picture.gallery.name, admin_gallery_path(@picture.gallery_id)} &raquo; #{@picture.title}" %>
+<% title "#{link_to @gallery.name, admin_gallery_path(@gallery)} &raquo; #{@picture.title}" %>
 
 <div id="picture" class="picture">
   <div class="preview">
@@ -9,8 +9,8 @@
 
 <div class="info">
   <p>
-    <%= link_to 'edit', edit_admin_gallery_picture_path(@picture.gallery_id, @picture) %> |
-    <%= link_to 'back', admin_gallery_path(@picture.gallery_id) %>
+    <%= link_to 'edit', edit_admin_gallery_picture_path(@gallery, @picture) %> |
+    <%= link_to 'back', admin_gallery_path(@gallery) %>
   </p>
 
   <p><b>Description:</b></p>
@@ -21,7 +21,7 @@
 <div id="picture">
   <% @pictures.each do |picture| %>
     <span class="mini-pictures">
-      <%= link_image(picture) %>
+      <%= link_image(picture, @gallery) %>
     </span>
   <% end %>
 </div>

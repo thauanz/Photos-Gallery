@@ -10,7 +10,7 @@ class User
 
   attr_accessible :full_name, :email, :password, :password_confirmation, :remember_me
 
-  has_many :galleries
+  references_many :galleries
 
   validates_presence_of :full_name
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i

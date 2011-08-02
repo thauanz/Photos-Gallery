@@ -1,10 +1,10 @@
 development:
   host: localhost
-  database: vestir_bem_development
+  database: photo_gallery_development
 
 test:
   host: localhost
-  database: vestir_bem_test
+  database: photo_gallery_test
 
 # set these environment variables on your prod server
 production:
@@ -18,3 +18,4 @@ production:
   #     port: 27018
   #   - host: slave2.local
   #     port: 27019
+

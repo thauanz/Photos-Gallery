@@ -5,11 +5,11 @@
 
   <% for picture in @gallery.pictures %>
     <div class="picture">
-      <%= link_image(picture) if picture.image? %>
+      <%= link_image(picture, @gallery) if picture.image? %>
       <div class="name"><%= picture.title %></div>
       <div class="actions">
-        <%= link_to "edit", edit_admin_gallery_picture_path(picture.gallery_id, picture) %> |
-        <%= link_to "remove", admin_gallery_picture_path(picture.gallery_id, picture), confirm: 'Are you sure?', method: :delete %>
+        <%= link_to "edit", edit_admin_gallery_picture_path(@gallery, picture) %> |
+        <%= link_to "remove", admin_gallery_picture_path(@gallery, picture), confirm: 'Are you sure?', method: :delete %>
       </div>
     </div>
   <% end %>

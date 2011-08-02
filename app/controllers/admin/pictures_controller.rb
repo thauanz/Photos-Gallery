@@ -1,8 +1,10 @@
 class Admin::PicturesController < Admin::AdminController
 
+  before_filter :gallery_resource
+
   def show
-    @picture = Picture.find(params[:id])
-    @pictures = Picture.where(gallery_id: params[:gallery_id]).excludes(id: @picture.id)
+    @picture = @gallery.pictures.find(params[:id])
+    @pictures = @gallery.pictures.excludes(id: @picture.id)
   end
 
   def new
@@ -10,25 +12,30 @@ class Admin::PicturesController < Admin::AdminController
   end
 
   def edit
-    @picture = Picture.find(params[:id])
+    @picture = @gallery.pictures.find(params[:id])
   end
 
   def create
-    @picture = current_user.galleries.find(params[:gallery_id]).pictures.build(params[:picture])
-    flash[:notice] = 'Picture was successfully created.' if @picture.save
-    respond_with @picture, location: admin_gallery_url(@picture.gallery_id)
+    @picture = @gallery.pictures.create(params[:picture])
+    flash[:notice] = 'Picture was successfully created.' if @picture
+    respond_with @picture, location: admin_gallery_url(@gallery)
   end
 
   def update
-    @picture = Picture.find(params[:id])
-    flash[:notice] = 'Picture was successfully updated.' if @picture.update_attributes(params[:picture])
-    respond_with @picture, location: admin_gallery_url(@picture.gallery_id)
+    @picture = @gallery.pictures.find(params[:id])
+    flash[:notice] = 'Picture was successfully updated.' if @picture.update_attributes!(params[:picture])
+    respond_with @picture, location: admin_gallery_url(@gallery)
   end
 
   def destroy
-    @picture = Picture.find(params[:id])
+    @picture = @gallery.pictures.find(params[:id])
     flash[:notice] = 'Picture was deleted.' if @picture.destroy
-    respond_with @picture, location: admin_gallery_url(@picture.gallery_id)
+    respond_with @picture, location: admin_gallery_url(@gallery)
+  end
+
+protected
+  def gallery_resource
+    @gallery = current_user.galleries.find(params[:gallery_id])
   end
 
 end

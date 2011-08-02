@@ -5,7 +5,9 @@ class Picture
   field :description, :type => String
   field :image, :type => String
 
-  belongs_to :gallery
+  key :title
+
+  embedded_in :gallery, :inverse_of => :pictures
 
   attr_accessible :title, :gallery, :description, :image, :remote_image_url
 

@@ -19,8 +19,8 @@ module ApplicationHelper
     content_for(:title) { text.html_safe }
   end
 
-  def link_image(picture)
-    link_to(image_tag(picture.image_url(:small)), admin_gallery_picture_path(picture.gallery_id, picture), id: "picture_#{picture.id}")
+  def link_image(picture, gallery = Gallery)
+    link_to(image_tag(picture.image_url(:small)), admin_gallery_picture_path(gallery, picture), id: "picture_#{picture.id}")
   end
 
   def main_title

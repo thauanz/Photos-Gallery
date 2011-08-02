@@ -1,4 +1,4 @@
-VestirBem::Application.routes.draw do
+PhotoGallery::Application.routes.draw do
   devise_for :users, :controllers => { :sessions  => "admin/sessions", :passwords => "admin/passwords"},
   :skip => [:registrations], :path => "/"
 

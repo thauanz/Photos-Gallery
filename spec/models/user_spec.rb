@@ -22,7 +22,7 @@ describe User do
 
   #associations
   context "associations" do
-    it { should have_many(:galleries) }
+    it { should reference_many(:galleries) }
   end
 
 end

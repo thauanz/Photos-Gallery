@@ -3,7 +3,7 @@
 <% @galleries.each do |gallery| %>
   <% gallery.pictures.each do |picture| %>
     <div class="picture">
-      <%= link_to(image_tag(picture.image_url(:small)), gallery_picture_path(picture.gallery_id, picture), id: "picture_#{picture.id}") %>
+      <%= link_to(image_tag(picture.image_url(:small)), gallery_picture_path(gallery, picture), id: "picture_#{picture.id}") %>
     </div>
   <% end %>
 <% end %>
