@@ -10,14 +10,11 @@
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+
     <% if @picture.image.size > 0 && !@picture.errors.present? %>
       upload present file <%= link_to 'picture', @picture.image.url, :target => "_blank" %>
     <% end %>
-  </div>
-
-  <div class="field">
-    <%= form.label :remote_image_url, "or image URL" %>
-    <%= form.text_field :remote_image_url %>
   </div>
 
   <div class="field">
@@ -26,7 +23,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Save" %> | <%= link_to "cancel", admin_gallery_path(params[:gallery_id]) %>
+    <%= form.submit "Save" %> | <%= link_to "cancel", admin_gallery_path(@gallery) %>
   </div>
 <% end %>
 

@@ -1,10 +1,6 @@
 require 'spec_helper'
 
-feature "Sign in user", %q{
-  In order to access the dress well
-  As a user
-  I want to access the site
-} do
+describe "Area admin" do
 
   let(:user) {Factory.create(:user) }
 

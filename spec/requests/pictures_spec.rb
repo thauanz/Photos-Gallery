@@ -1,10 +1,6 @@
 require 'spec_helper'
 
-feature "Pictures", %q{
-  To access the system
-  As a user
-  I will have available the option to manage the images
-} do
+describe "Pictures Requests" do
 
   let(:user) { Factory.create(:user) }
 
@@ -28,7 +24,9 @@ feature "Pictures", %q{
     fill_in "Title", with: "#{@picture.title} #{number}"
     click_button "Save"
     current_path.should == show_gallery(@gallery.id)
-    page.should be_has_content("#{@picture.title} #{number}")
+    @picture = Gallery.find(@gallery.id).pictures.first
+    page.should be_has_content("#{@picture.title}")
+    page.should be_has_css("a#picture_#{@picture.id}")
   end
 
   it "a picture new for gallery" do
@@ -45,14 +43,9 @@ feature "Pictures", %q{
   end
 
   context "view switch picture" do
-
-    def select_picture
+    it "should change the picture inside the viewing" do
       click_link "picture_#{@picture.id}"
       current_path.should == show_picture(@gallery.id, @picture.id)
-    end
-
-    it "should change the picture inside the viewing" do
-      select_picture
       edit_links
     end
   end
