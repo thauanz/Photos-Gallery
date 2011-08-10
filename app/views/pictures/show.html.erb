@@ -1,2 +1,15 @@
-Presente
+<% title "Home &raquo; #{@gallery.name} &raquo; #{@picture.title}" %>
+
+
+<div id="picture">
+  <%= image_tag @picture.image_url, :class => "left" %>
+</div>
+
+<div id="pictures">
+  <% @pictures.each do |picture| %>
+    <div class="picture">
+      <%= link_to(image_tag(picture.image_url(:small)), gallery_picture_path(@gallery, picture), id: "picture_#{picture.id}") %>
+    </div>
+  <% end %>
+</div>
 

@@ -63,6 +63,7 @@ describe "Galleries Requests" do
       it "should view back all galleries" do
         gallery_view_show
         click_link "View Galleries"
+        current_path.should == galleries
       end
     end
   end

@@ -1,4 +1,10 @@
-<% title "Galleries" %>
+<% title "Home" %>
+
+<% content_for :menu do %>
+  <div id="column1">
+    <%= main_menu %>
+  </div>
+<% end %>
 
 <% @galleries.each do |gallery| %>
   <% gallery.pictures.each do |picture| %>

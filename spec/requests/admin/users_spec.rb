@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Area admin" do
+describe "User requests admin" do
 
   let(:user) {Factory.create(:user) }
 

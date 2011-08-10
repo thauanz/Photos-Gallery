@@ -32,7 +32,7 @@ module ApplicationHelper
     @galleries = Gallery.all
     @galleries.each do |gallery|
       html << "<div id='gallery'><h3>"
-      html << link_to(gallery.name, gallery_path(gallery), remote: true)
+      html << link_to(gallery.name, gallery_path(gallery))
       html << "</h3></div>"
     end
     html.html_safe

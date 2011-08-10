@@ -25,6 +25,16 @@
     margin: 15px 0px;
   }
 
+  #pictures {
+    float: left;
+    margin: 50px auto;
+  }
+
+  #picture {
+    width: 500px;
+    margin: 10px auto;
+  }
+
   .picture {
     border: 0px;
     margin-right: 5px;
@@ -42,7 +52,6 @@
   }
 
   #column2 {
-    width: 700px;
     margin: 0 0 50px;
     padding: 10px;
     border-left: 1px solid darken($color-header, 25%);

@@ -1,3 +1,4 @@
+<% title "Home &raquo; #{@gallery.name}" %>
 <% @gallery.pictures.each do |picture| %>
   <div class="picture">
     <%= link_to(image_tag(picture.image_url(:small)), gallery_picture_path(@gallery, picture), id: "picture_#{picture.id}") %>
