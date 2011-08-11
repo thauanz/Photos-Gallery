@@ -6,11 +6,11 @@ Project created in condition the studying.
 
 This is a demonstration application using:
 
-{Ruby 1.9.2}[http://www.ruby-lang.org/en/news/2011/07/15/ruby-1-9-2-p290-is-released/] — language
-{Rails 3.1}[https://github.com/rails/rails] — web framework
-{Mongoid}[https://github.com/mongoid/mongoid] — mapper for database for rails with mongoDB
-{Carrierwave}[http://github.com/jnicklas/carrierwave] — attach and upload files
-{Devise}[https://github.com/plataformatec/devise] – authentication
+* {Ruby 1.9.2}[http://www.ruby-lang.org/en/news/2011/07/15/ruby-1-9-2-p290-is-released/] — language
+* {Rails 3.1}[https://github.com/rails/rails] — web framework
+* {Mongoid}[https://github.com/mongoid/mongoid] — mapper for database for rails with mongoDB
+* {Carrierwave}[http://github.com/jnicklas/carrierwave] — attach and upload files
+* {Devise}[https://github.com/plataformatec/devise] – authentication
 
 Other dependencies:
 
