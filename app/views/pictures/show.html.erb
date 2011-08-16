@@ -1,8 +1,9 @@
-<% title "Home &raquo; #{@gallery.name} &raquo; #{@picture.title}" %>
+<% title "#{@gallery.name} &raquo; #{@picture.title} <span class='hint'>(#{number_to_human_size @picture.image.size })</span>" %>
 
 
 <div id="picture">
   <%= image_tag @picture.image_url, :class => "left" %>
+  <p class="left"><%= @picture.description %></p>
 </div>
 
 <div id="pictures">

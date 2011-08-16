@@ -1,7 +1,8 @@
-<% title "Home &raquo; #{@gallery.name}" %>
+
 <% @gallery.pictures.each do |picture| %>
   <div class="picture">
     <%= link_to(image_tag(picture.image_url(:small)), gallery_picture_path(@gallery, picture), id: "picture_#{picture.id}") %>
+    <br/><iframe src="http://www.facebook.com/plugins/like.php?href&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
   </div>
 <% end %>
 

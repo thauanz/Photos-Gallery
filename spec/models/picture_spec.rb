@@ -4,11 +4,7 @@ describe Picture do
 
   before(:each){
     @gallery = Factory(:gallery)
-    @picture = @gallery.pictures.create(
-      title: "Teste",
-      image: File.open("/home/thauan/Imagens/curso-ruby.jpg"),
-      description: %w(Lorem Ipsum is simply dummy text of the printing and typesetting.)
-    )
+    @picture = @gallery.pictures.create(picture_attributes)
   }
 
   #db
